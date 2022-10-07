@@ -4,8 +4,10 @@ sources:
     - name: stripe
       database: static-gravity-312212
       schema: stripe
+      description: A clone of Postgres Stripe app.
       tables:
         - name: payment
+          description: Raw payments data.
           loaded_at_field: _batched_at
           freshness:
             warn_after: {count: 12, period: hour}

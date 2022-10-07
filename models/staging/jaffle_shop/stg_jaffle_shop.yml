@@ -9,6 +9,12 @@ models:
           tests:
             - not_null
             - unique
+        
+        - name: first_name
+          description: First name of the customer.
+        
+        - name: last_name
+          description: Last name of the customer.
 
     - name: stg_orders
       description: Staged orders data from jaffle shop. Unique order per row.
@@ -18,6 +24,10 @@ models:
           tests:
             - not_null
             - unique
+        
+        - name: order_date
+          description: The date of an order.
+
         - name: status
           description: '{{ doc("order_status") }}'
           tests:
@@ -28,6 +38,7 @@ models:
                     - returned
                     - return_pending
                     - placed
+                    
         - name: customer_id
           description: Foreign key to stg_customers.customer_id
           tests:

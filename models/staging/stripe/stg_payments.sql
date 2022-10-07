@@ -6,4 +6,4 @@ SELECT
 
     amount / 100 AS amount,
     created as created_at
-FROM stripe.payment
+FROM {{ source('stripe', 'payment') }}

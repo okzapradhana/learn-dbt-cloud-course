@@ -2,18 +2,24 @@ version: 2
 
 sources:
     - name: jaffle_shop
+      description: A clone of a Postgres application database.
       database: static-gravity-312212
       schema: jaffle_shop
       tables:
         - name: customers
+          description: Raw customers data. Unique customer per row.
           columns:
             - name: id
+              description: Primary key for customers data.
               tests:
                 - not_null
                 - unique
+                
         - name: orders
+          description: Raw orders data. Unique orders per row.
           columns:
             - name: id
+              description: Primary key for orders data.
               tests:
                 - not_null
                 - unique
